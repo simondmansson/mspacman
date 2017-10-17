@@ -12,3 +12,7 @@
 # Folders
 /out
 /bin
+/pdf
+
+# misc
+*.txt
