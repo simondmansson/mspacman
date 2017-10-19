@@ -1,5 +1,7 @@
 package PacmanAI;
 import static pacman.game.Constants.*;
+
+import PacmanAI.interfaces.DecisionTree;
 import pacman.controllers.Controller;
 import pacman.game.*;
 
