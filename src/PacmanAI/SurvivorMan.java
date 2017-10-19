@@ -9,10 +9,15 @@ import pacman.game.*;
  *
  */
 public class SurvivorMan extends Controller<MOVE>{
+    private DecisionTree tree;
+
+    public SurvivorMan(DecisionTree tree) {
+        this.tree = tree;
+    }
+
 
     @Override
-
     public MOVE getMove(Game game, long timeDue) {
-        return null;
+        return tree.makeDecision(game.getGameState());
     }
 }
