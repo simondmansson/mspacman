@@ -1,4 +1,7 @@
 package PacmanAI;
+import PacmanAI.interfaces.DecisionTree;
+import PacmanAI.interfaces.DecisionTreeBuilder;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 

@@ -1,5 +1,6 @@
 package PacmanAI;
 
+import PacmanAI.interfaces.DecisionTree;
 import dataRecording.DataTuple;
 import pacman.game.Constants.*;
 

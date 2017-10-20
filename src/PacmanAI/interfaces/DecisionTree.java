@@ -1,4 +1,4 @@
-package PacmanAI;
+package PacmanAI.interfaces;
 
 import pacman.game.Constants.*;
 
