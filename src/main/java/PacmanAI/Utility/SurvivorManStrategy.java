@@ -17,13 +17,12 @@ public class SurvivorManStrategy implements ParsingStrategy {
         try (Stream<String> stream = Files.lines(Paths.get(filepath))) {
             stream.forEach( line -> {
                 String[] parts = line.trim().split(":");
-                String key = parts[0];
+                String key = parts[0].trim();
                 String[] values = parts[1].trim().split(",");
                 LinkedList<String> vals = new LinkedList<>();
                 for(int i = 0; i < values.length; i++)
                 {
-                    vals.add(values[i]);
-                    System.out.print(values[i] +" ");
+                    vals.add(values[i].trim());
                 }
                 attributelist.put(key, vals);
             });
