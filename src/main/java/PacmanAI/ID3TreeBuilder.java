@@ -1,14 +1,13 @@
 package PacmanAI;
 
-
 import PacmanAI.interfaces.DecisionTree;
 import PacmanAI.interfaces.DecisionTreeBuilder;
 import dataRecording.DataTuple;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class ID3TreeBuilder implements DecisionTreeBuilder {
+
     private Partition dataset;
     private HashMap<String, LinkedList<String>> attributes;
     private double informationNeeded;
@@ -66,7 +65,6 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
      * @return double
      */
     private double infoAttribute(Partition partition, String attribute) {
-        //TODO loop over attribute values
         double[] attributeFractions = getAttributeFractions(partition, attribute);
         LinkedList<String> values = attributes.get(attribute);
 
@@ -86,8 +84,6 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
      * @return double
      */
     private double info(Partition partition) {
-        //TODO loop over class and sum -(p * log p)
-
         double[] attributeFractions = getAttributeFractions(partition, "DirectionChosen");
 
         double result = 0;

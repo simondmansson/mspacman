@@ -12,17 +12,15 @@ import java.util.LinkedList;
  *
 */
 public class Partition {
-
     private LinkedList<DataTuple> tuples;
 
     public Partition(LinkedList<DataTuple> subpartion) {
         this.tuples = subpartion;
     }
-
+  
     public LinkedList<DataTuple> getTuples() {
         return tuples;
     }
-
     /**
      * Creates a new Partition on the given attribute and value.
      * @param attribute
