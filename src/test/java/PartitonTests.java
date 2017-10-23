@@ -10,10 +10,10 @@ import java.util.LinkedList;
 
 public class PartitonTests {
     private Partition partition;
-    private LinkedList<DataTuple> tuples;
+    private static LinkedList<DataTuple> tuples;
 
     @BeforeClass
-    public void preSetup()
+    public static void preSetup()
     {
         Parser p = new Parser();
         tuples = p.parseTrainingData("src/test/resources/trainingData.txt");
@@ -22,13 +22,17 @@ public class PartitonTests {
     @Before
     public void setup() {
         partition = new Partition(tuples);
-        //Assert.assertTrue(partition.); getTuples != null;
+        Assert.assertTrue(partition.getTuples() != null);
     }
 
     @Test
     public void shouldCreateASubPartition()
     {
-        Partition other = partition.createNewPartitionOn("blinkyIsEdible", "true");
+        Partition other = partition.createNewPartitionOn("isBlinkyEdible", "true");
+        other.getTuples().forEach( tuple -> {
+           Assert.assertTrue(!tuple.getAttribute("isBlinkyEdible").equals("false"));
+        });
+
     }
 
 
