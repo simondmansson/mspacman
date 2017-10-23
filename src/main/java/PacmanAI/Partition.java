@@ -25,6 +25,11 @@ public class Partition {
      * @return Partition
      */
     public Partition createNewPartitionOn(String attribute, String value) {
+        LinkedList<DataTuple> list = new LinkedList<>();
+        tuples.forEach( tuple -> {
+                                tuple.
+
+                });
         return null;
     }
 }
