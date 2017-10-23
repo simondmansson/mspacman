@@ -284,13 +284,13 @@ public class DataTuple {
 			case "isSueEdible":
 				return "" + isSueEdible;
 			case "blinkyDist":
-				return "" + blinkyDist;
+				return "" + discretizeDistance(blinkyDist);
 			case "inkyDist":
-				return "" + inkyDist;
+				return "" + discretizeDistance(inkyDist);
 			case "getPinkyDist":
-				return "" + pinkyDist;
+				return "" + discretizeDistance(pinkyDist);
 			case "sueDist":
-				return "" + sueDist;
+				return "" + discretizeDistance(sueDist);
 			case "blinkyDir":
 				return "" + blinkyDir;
 			case "inkyDir":

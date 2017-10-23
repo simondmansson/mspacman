@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.stream.Stream;
 
 public class SurvivorManStrategy implements ParsingStrategy {
+
     @Override
     public HashMap<String, LinkedList<String>> parse(String filepath) {
         HashMap<String, LinkedList<String>> attributelist = new HashMap<>();
