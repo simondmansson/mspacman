@@ -39,8 +39,8 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
      * @return TreeNode complete decision tree
      */
     private TreeNode build(Partition partition, HashMap<String, LinkedList<String>> attributes) {
-        TreeNode node = new TreeNode();
-        return node;
+       // TreeNode node = new TreeNode();
+        return null;
     }
 
     private String selectSplit(Partition partition, HashMap<String, LinkedList<String>> attributes) {
