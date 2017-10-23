@@ -1,6 +1,6 @@
-package dataRecording;
+package main.java.dataRecording;
 
-import pacman.game.util.*;
+import main.java.pacman.game.util.*;
 
 /**
  * This class uses the IO class in the PacMan framework to do the actual saving/loading of

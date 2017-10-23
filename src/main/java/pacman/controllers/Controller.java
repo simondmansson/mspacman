@@ -1,6 +1,6 @@
-package pacman.controllers;
+package main.java.pacman.controllers;
 
-import pacman.game.Game;
+import main.java.pacman.game.Game;
 
 /**
  * This class is the superclass of your controller. In contains the code required to run the 

@@ -1,8 +1,8 @@
-package PacmanAI;
+package main.java.PacmanAI;
 
-import PacmanAI.interfaces.DecisionTree;
-import dataRecording.DataTuple;
-import pacman.game.Constants.*;
+import main.java.PacmanAI.interfaces.DecisionTree;
+import main.java.dataRecording.DataTuple;
+import main.java.pacman.game.Constants.*;
 
 public class ID3Tree implements DecisionTree {
     private TreeNode root;

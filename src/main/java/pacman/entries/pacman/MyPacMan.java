@@ -1,8 +1,8 @@
-package pacman.entries.pacman;
+package main.java.pacman.entries.pacman;
 
-import pacman.controllers.Controller;
-import pacman.game.Constants.MOVE;
-import pacman.game.Game;
+import main.java.pacman.controllers.Controller;
+import main.java.pacman.game.Constants.MOVE;
+import main.java.pacman.game.Game;
 
 /*
  * This is the class you need to modify for your entry. In particular, you need to

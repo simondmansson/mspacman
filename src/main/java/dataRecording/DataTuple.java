@@ -1,10 +1,10 @@
-package dataRecording;
+package main.java.dataRecording;
 
-import pacman.game.Constants;
-import pacman.game.Constants.DM;
-import pacman.game.Constants.GHOST;
-import pacman.game.Constants.MOVE;
-import pacman.game.Game;
+import main.java.pacman.game.Constants;
+import main.java.pacman.game.Constants.DM;
+import main.java.pacman.game.Constants.GHOST;
+import main.java.pacman.game.Constants.MOVE;
+import main.java.pacman.game.Game;
 
 public class DataTuple {
 

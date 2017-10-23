@@ -1,10 +1,10 @@
-package dataRecording;
+package main.java.dataRecording;
 
-import pacman.controllers.*;
-import pacman.game.Constants.DM;
-import pacman.game.Constants.GHOST;
-import pacman.game.Game;
-import pacman.game.Constants.MOVE;
+
+import main.java.pacman.controllers.HumanController;
+import main.java.pacman.controllers.KeyBoardInput;
+import main.java.pacman.game.Constants.*;
+import main.java.pacman.game.Game;
 
 /**
  * The DataCollectorHumanController class is used to collect training data from playing PacMan.
@@ -12,7 +12,7 @@ import pacman.game.Constants.MOVE;
  * @author andershh
  *
  */
-public class DataCollectorController extends HumanController{
+public class DataCollectorController extends HumanController {
 	
 	public DataCollectorController(KeyBoardInput input){
 		super(input);

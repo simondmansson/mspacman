@@ -1,4 +1,4 @@
-package PacmanAI.interfaces;
+package main.java.PacmanAI.interfaces;
 
 /**
  * @author Kalk88 & Kemaldev

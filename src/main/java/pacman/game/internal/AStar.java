@@ -1,12 +1,12 @@
-package pacman.game.internal;
+package main.java.pacman.game.internal;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.PriorityQueue;
 
-import pacman.game.Game;
-import pacman.game.Constants.MOVE;
+import main.java.pacman.game.Game;
+import main.java.pacman.game.Constants.MOVE;
 
 /*
  * This class is used to compute the shortest path for the ghosts: as these may not reverse, one cannot use 

@@ -1,12 +1,12 @@
-package pacman.controllers.examples;
+package main.java.pacman.controllers.examples;
 
 import java.awt.Color;
-import pacman.controllers.Controller;
-import pacman.game.Game;
-import pacman.game.GameView;
-import pacman.game.Constants.DM;
+import main.java.pacman.controllers.Controller;
+import main.java.pacman.game.Game;
+import main.java.pacman.game.GameView;
+import main.java.pacman.game.Constants.DM;
 
-import static pacman.game.Constants.*;
+import static main.java.pacman.game.Constants.*;
 
 /*
  * Same as NearestPillPacMan but does some visuals to illustrate what can be done.

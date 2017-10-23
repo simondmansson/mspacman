@@ -1,7 +1,7 @@
-package pacman;
+package main.java.pacman;
 
-import dataRecording.DataSaverLoader;
-import dataRecording.DataTuple;
+import main.java.dataRecording.DataSaverLoader;
+import main.java.dataRecording.DataTuple;
 
 public class DataTester {
 

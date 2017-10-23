@@ -1,8 +1,8 @@
-package pacman.controllers;
+package main.java.pacman.controllers;
 
 import java.awt.event.KeyEvent;
-import pacman.game.Game;
-import pacman.game.Constants.MOVE;
+import main.java.pacman.game.Game;
+import main.java.pacman.game.Constants.MOVE;
 
 /*
  * Allows a human player to play the game using the arrow key of the keyboard.

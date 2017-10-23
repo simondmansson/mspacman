@@ -1,10 +1,10 @@
-package pacman.controllers.examples;
+package main.java.pacman.controllers.examples;
 
 import java.util.ArrayList;
-import pacman.controllers.Controller;
-import pacman.game.Game;
+import main.java.pacman.controllers.Controller;
+import main.java.pacman.game.Game;
 
-import static pacman.game.Constants.*;
+import static main.java.pacman.game.Constants.*;
 
 /*
  * Pac-Man controller as part of the starter package - simply upload this file as a zip called

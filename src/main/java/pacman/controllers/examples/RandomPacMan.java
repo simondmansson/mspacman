@@ -1,9 +1,9 @@
-package pacman.controllers.examples;
+package main.java.pacman.controllers.examples;
 
 import java.util.Random;
-import pacman.game.Game;
-import pacman.game.Constants.MOVE;
-import pacman.controllers.Controller;
+import main.java.pacman.game.Game;
+import main.java.pacman.game.Constants.MOVE;
+import main.java.pacman.controllers.Controller;
 
 /*
  * The Class RandomPacMan.
