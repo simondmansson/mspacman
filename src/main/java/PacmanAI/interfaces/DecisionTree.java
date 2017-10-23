@@ -1,6 +1,6 @@
-package main.java.PacmanAI.interfaces;
+package PacmanAI.interfaces;
 
-import main.java.pacman.game.Constants.*;
+import pacman.game.Constants.*;
 
 /**
  * @author Kalk88 & Kemaldev

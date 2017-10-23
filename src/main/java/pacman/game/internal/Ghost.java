@@ -1,7 +1,7 @@
-package main.java.pacman.game.internal;
+package pacman.game.internal;
 
-import main.java.pacman.game.Constants.GHOST;
-import main.java.pacman.game.Constants.MOVE;
+import pacman.game.Constants.GHOST;
+import pacman.game.Constants.MOVE;
 
 /*
  * Data structure to hold all information pertaining to the ghosts.

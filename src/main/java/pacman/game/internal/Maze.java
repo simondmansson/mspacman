@@ -1,13 +1,13 @@
-package main.java.pacman.game.internal;
+package pacman.game.internal;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 //import java.util.EnumMap;
-//import main.java.pacman.game.Constants.MOVE;
+//import pacman.game.Constants.MOVE;
 
-import static main.java.pacman.game.Constants.*;
+import static pacman.game.Constants.*;
 
 /*
  * Stores the actual mazes, each of which is simply a connected graph. The differences between the mazes are the connectivity

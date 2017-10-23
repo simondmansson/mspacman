@@ -1,12 +1,12 @@
-package main.java.pacman.game.internal;
+package pacman.game.internal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Set;
-import main.java.pacman.game.Constants.MOVE;
-import main.java.pacman.game.Game;
+import pacman.game.Constants.MOVE;
+import pacman.game.Game;
 
 /*
  * Pre-computes paths for more efficient execution of the game. It is a tradeoff between loading times, execution speed,

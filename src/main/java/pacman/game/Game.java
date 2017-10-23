@@ -1,18 +1,18 @@
-package main.java.pacman.game;
+package pacman.game;
 
 import java.util.BitSet;
 import java.util.EnumMap;
 import java.util.Random;
 import java.util.Map.Entry;
-import main.java.pacman.game.Constants.DM;
-import main.java.pacman.game.Constants.MOVE;
-import main.java.pacman.game.internal.Ghost;
-import main.java.pacman.game.internal.Maze;
-import main.java.pacman.game.internal.Node;
-import main.java.pacman.game.internal.PacMan;
-import main.java.pacman.game.internal.PathsCache;
+import pacman.game.Constants.DM;
+import pacman.game.Constants.MOVE;
+import pacman.game.internal.Ghost;
+import pacman.game.internal.Maze;
+import pacman.game.internal.Node;
+import pacman.game.internal.PacMan;
+import pacman.game.internal.PathsCache;
 
-import static main.java.pacman.game.Constants.*;
+import static pacman.game.Constants.*;
 
 /**
  * The implementation of Ms Pac-Man. This class contains the game engine and all methods required to

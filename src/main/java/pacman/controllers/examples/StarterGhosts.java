@@ -1,11 +1,11 @@
-package main.java.pacman.controllers.examples;
+package pacman.controllers.examples;
 
 import java.util.EnumMap;
 import java.util.Random;
-import main.java.pacman.controllers.Controller;
-import main.java.pacman.game.Game;
+import pacman.controllers.Controller;
+import pacman.game.Game;
 
-import static main.java.pacman.game.Constants.*;
+import static pacman.game.Constants.*;
 
 /*
  * Ghost team controller as part of the starter package - simply upload this file as a zip called

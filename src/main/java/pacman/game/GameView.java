@@ -1,9 +1,9 @@
-package main.java.pacman.game;
+package pacman.game;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import main.java.pacman.game.Constants.GHOST;
-import main.java.pacman.game.Constants.MOVE;
+import pacman.game.Constants.GHOST;
+import pacman.game.Constants.MOVE;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.EnumMap;
 import java.util.Vector;
 
-import static main.java.pacman.game.Constants.*;
+import static pacman.game.Constants.*;
 
 /**
  * This class is the view that displays the game. The only thing contestants might need to know

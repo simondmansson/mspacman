@@ -1,9 +1,9 @@
-package main.java.PacmanAI;
-import static main.java.pacman.game.Constants.*;
+package PacmanAI;
+import static pacman.game.Constants.*;
 
-import main.java.PacmanAI.interfaces.DecisionTree;
-import main.java.pacman.controllers.Controller;
-import main.java.pacman.game.*;
+import PacmanAI.interfaces.DecisionTree;
+import pacman.controllers.Controller;
+import pacman.game.*;
 
 /**
  * @author Kalk88 & Kemaldev

@@ -1,4 +1,4 @@
-package main.java.PacmanAI;
+package PacmanAI;
 
 import java.util.LinkedList;
 

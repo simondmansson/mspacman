@@ -1,0 +1,13 @@
+isBlinkeyEdible : true, false
+isInkyEdible    : true, false
+isPinkyEdible   : true, false
+isSueEdible	    : true, false
+blinkyDist	    : true, false
+inkyDist	    :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+pinkyDist       :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+sueDist         :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+blinkyDir       :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+inkyDir         :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+pinkyDir        :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+sueDir          :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+PowerPills      :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE

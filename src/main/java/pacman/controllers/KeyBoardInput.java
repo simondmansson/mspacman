@@ -1,4 +1,4 @@
-package main.java.pacman.controllers;
+package pacman.controllers;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;

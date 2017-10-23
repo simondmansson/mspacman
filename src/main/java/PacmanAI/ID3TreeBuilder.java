@@ -1,14 +1,14 @@
-package main.java.PacmanAI;
+package PacmanAI;
 
 
-import main.java.PacmanAI.interfaces.DecisionTree;
-import main.java.PacmanAI.interfaces.DecisionTreeBuilder;
+import PacmanAI.interfaces.DecisionTree;
+import PacmanAI.interfaces.DecisionTreeBuilder;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class ID3TreeBuilder implements DecisionTreeBuilder {
-    private Partition dataset;
+    private PacmanAI.Partition dataset;
     private HashMap<String, LinkedList<String>> attributes;
     private double informationNeeded;
 

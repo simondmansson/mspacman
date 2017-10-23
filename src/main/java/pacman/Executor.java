@@ -1,4 +1,4 @@
-package main.java.pacman;
+package pacman;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -10,24 +10,24 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Random;
 
-import main.java.dataRecording.DataCollectorController;
-import main.java.pacman.controllers.Controller;
-import main.java.pacman.controllers.HumanController;
-import main.java.pacman.controllers.KeyBoardInput;
-import main.java.pacman.controllers.examples.AggressiveGhosts;
-import main.java.pacman.controllers.examples.Legacy;
-import main.java.pacman.controllers.examples.Legacy2TheReckoning;
-import main.java.pacman.controllers.examples.NearestPillPacMan;
-import main.java.pacman.controllers.examples.NearestPillPacManVS;
-import main.java.pacman.controllers.examples.RandomGhosts;
-import main.java.pacman.controllers.examples.RandomNonRevPacMan;
-import main.java.pacman.controllers.examples.RandomPacMan;
-import main.java.pacman.controllers.examples.StarterGhosts;
-import main.java.pacman.controllers.examples.StarterPacMan;
-import main.java.pacman.game.Game;
-import main.java.pacman.game.GameView;
+import dataRecording.DataCollectorController;
+import pacman.controllers.Controller;
+import pacman.controllers.HumanController;
+import pacman.controllers.KeyBoardInput;
+import pacman.controllers.examples.AggressiveGhosts;
+import pacman.controllers.examples.Legacy;
+import pacman.controllers.examples.Legacy2TheReckoning;
+import pacman.controllers.examples.NearestPillPacMan;
+import pacman.controllers.examples.NearestPillPacManVS;
+import pacman.controllers.examples.RandomGhosts;
+import pacman.controllers.examples.RandomNonRevPacMan;
+import pacman.controllers.examples.RandomPacMan;
+import pacman.controllers.examples.StarterGhosts;
+import pacman.controllers.examples.StarterPacMan;
+import pacman.game.Game;
+import pacman.game.GameView;
 
-import static main.java.pacman.game.Constants.*;
+import static pacman.game.Constants.*;
 
 /**
  * This class may be used to execute the game in timed or un-timed modes, with or without

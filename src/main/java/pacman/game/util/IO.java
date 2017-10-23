@@ -1,4 +1,4 @@
-package main.java.pacman.game.util;
+package pacman.game.util;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

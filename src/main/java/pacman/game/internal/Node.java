@@ -1,7 +1,7 @@
-package main.java.pacman.game.internal;
+package pacman.game.internal;
 
 import java.util.EnumMap;
-import main.java.pacman.game.Constants.MOVE;
+import pacman.game.Constants.MOVE;
 
 /*
  * The class is a data structure used to represent a node in the graph. Each maze is a set of connected nodes and 

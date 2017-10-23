@@ -1,6 +1,6 @@
-package main.java.PacmanAI;
+package PacmanAI;
 
-import main.java.dataRecording.DataTuple;
+import dataRecording.DataTuple;
 
 import java.util.LinkedList;
 

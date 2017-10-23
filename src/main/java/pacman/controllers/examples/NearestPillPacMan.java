@@ -1,9 +1,9 @@
-package main.java.pacman.controllers.examples;
+package pacman.controllers.examples;
 
-import main.java.pacman.controllers.Controller;
-import main.java.pacman.game.Game;
+import pacman.controllers.Controller;
+import pacman.game.Game;
 
-import static main.java.pacman.game.Constants.*;
+import static pacman.game.Constants.*;
 
 /*
  * The Class NearestPillPacMan.
