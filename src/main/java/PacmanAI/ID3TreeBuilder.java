@@ -1,14 +1,14 @@
 package PacmanAI;
 
-
 import PacmanAI.interfaces.DecisionTree;
 import PacmanAI.interfaces.DecisionTreeBuilder;
-
+import dataRecording.DataTuple;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class ID3TreeBuilder implements DecisionTreeBuilder {
-    private PacmanAI.Partition dataset;
+
+    private Partition dataset;
     private HashMap<String, LinkedList<String>> attributes;
     private double informationNeeded;
 
@@ -21,7 +21,7 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
     {
         this.dataset = dataset;
         this.attributes = attributes;
-        informationNeeded = info(dataset);
+        informationNeeded = info(dataset); // MOVE as second parameter
     }
 
     /**
@@ -65,9 +65,17 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
      * @return double
      */
     private double infoAttribute(Partition partition, String attribute) {
-        //TODO loop over attribute values
-            // res += numOfValue/TotalRows * info(partion value)
-        return 0;
+        double[] attributeFractions = getAttributeFractions(partition, attribute);
+        LinkedList<String> values = attributes.get(attribute);
+
+        double result = 0;
+        for(int i = 0; i < values.size(); i++) {
+            Partition p = makePartition(partition, attribute, values.get(i));
+            double infoP = info(p);
+            result += attributeFractions[i] * infoP;
+        }
+
+        return result;
     }
 
     /**
@@ -76,11 +84,45 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
      * @return double
      */
     private double info(Partition partition) {
-        //TODO loop over class and sum -(p * log p)
-        return 0;
+        double[] attributeFractions = getAttributeFractions(partition, "DirectionChosen");
+
+        double result = 0;
+        for(int i = 0; i < attributeFractions.length; i++) {
+            double fraction = attributeFractions[i];
+            result += (fraction * (int)(Math.log(fraction)/Math.log(2)+1e-10)) * -1;
+        }
+
+        return result;
     }
 
-    private Partition makePartion(Partition partition, String attribute, String value) {
+    private double[] getAttributeFractions(Partition partition, String attribute) {
+        LinkedList<DataTuple> tuples = partition.getTuples();
+        LinkedList<String> values = attributes.get(attribute);
+        String[] attributeValues = new String[values.size()];
+
+        for(int i = 0; i < values.size(); i++) {
+            attributeValues[i] = values.get(i);
+        }
+
+        double[] attributeFractions = new double[attributeValues.length];
+
+        for(DataTuple tuple : tuples) {
+            String value = tuple.getAttribute(attribute);
+            for(int i = 0; i < attributeValues.length; i++) {
+                if(attributeValues[i].equals(value)) {
+                    attributeFractions[i]++;
+                }
+            }
+        }
+
+        for(int i = 0; i < attributeFractions.length; i++) {
+            attributeFractions[i] = attributeFractions[i] / tuples.size();
+        }
+
+        return attributeFractions;
+    }
+
+    private Partition makePartition(Partition partition, String attribute, String value) {
         return partition.createNewPartitionOn(attribute, value);
     }
 

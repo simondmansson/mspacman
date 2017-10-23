@@ -264,4 +264,40 @@ public class DataTuple {
 		return DiscreteTag.DiscretizeDouble(aux);
 	}
 
+	public String getAttribute(String attribute) {
+		switch(attribute) {
+			case "DirectionChosen":
+				return "" + DirectionChosen;
+			case "numOfPowerPillsLeft":
+				return "" + numOfPowerPillsLeft;
+			case "isBlinkyEdible":
+				return "" + isBlinkyEdible;
+			case "isInkyEdible":
+				return "" + isInkyEdible;
+			case "isPinkyEdible":
+				return "" + isPinkyEdible;
+			case "isSueEdible":
+				return "" + isSueEdible;
+			case "blinkyDist":
+				return "" + blinkyDist;
+			case "inkyDist":
+				return "" + inkyDist;
+			case "getPinkyDist":
+				return "" + pinkyDist;
+			case "sueDist":
+				return "" + sueDist;
+			case "blinkyDir":
+				return "" + blinkyDir;
+			case "inkyDir":
+				return "" + inkyDir;
+			case "pinkyDir":
+				return "" + pinkyDir;
+			case "sueDir":
+				return "" + sueDir;
+			default:
+				System.out.println("Error, " + attribute + " was not found in getAttribute() method.");
+				return null;
+		}
+	}
+
 }
