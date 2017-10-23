@@ -13,5 +13,7 @@ public class TreeNode {
     private LinkedList<TreeNode> children;
     //TODO GETTER SETTER CONSTRUCTOR
 
+    
+
 
 }

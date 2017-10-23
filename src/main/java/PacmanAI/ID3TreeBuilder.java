@@ -95,6 +95,13 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
         return result;
     }
 
+    /**
+     * Calculates the subset of an attribute in a partition.
+     * @param partition The partition we're calculating in.
+     * @param attribute The attribute we would like to calculate the subset from.
+     * @return
+     */
+
     private double[] getAttributeFractions(Partition partition, String attribute) {
         LinkedList<DataTuple> tuples = partition.getTuples();
         LinkedList<String> values = attributes.get(attribute);
@@ -122,6 +129,14 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
         return attributeFractions;
     }
 
+    /**
+     * Creates a new partition from the specified partition based on which attribute and value you would like to create
+     * the new partition from.
+     * @param partition The partition you would like to create the new partition from.
+     * @param attribute The attribute you would like the new partition to have.
+     * @param value The value of the attribute that you would like the new partition to be split on.
+     * @return Returns the new partition with the values specified in the method's parameters.
+     */
     private Partition makePartition(Partition partition, String attribute, String value) {
         return partition.createNewPartitionOn(attribute, value);
     }

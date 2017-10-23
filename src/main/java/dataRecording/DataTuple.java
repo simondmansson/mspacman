@@ -264,6 +264,11 @@ public class DataTuple {
 		return DiscreteTag.DiscretizeDouble(aux);
 	}
 
+	/**
+	 * Returning an attribute equivalent to the string passed into the method.
+	 * @param attribute A String that represents an attribute.
+	 * @return
+	 */
 	public String getAttribute(String attribute) {
 		switch(attribute) {
 			case "DirectionChosen":
