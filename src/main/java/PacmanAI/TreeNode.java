@@ -1,7 +1,6 @@
 package PacmanAI;
 
 import PacmanAI.interfaces.TreePrint;
-
 import java.util.HashMap;
 
 /**
@@ -24,7 +23,7 @@ public class TreeNode implements TreePrint {
     }
 
     public void addEdge(String path, TreeNode child) {
-            edges.put(path, child);
+        edges.put(path, child);
     }
 
     public TreeNode getChild(String path) {
@@ -45,10 +44,33 @@ public class TreeNode implements TreePrint {
 
     @Override
     public void printTree(TreeNode node, int height) {
-        for (int i = 1; i < height; i++) {
-            System.out.print("\t");
-        }
-        System.out.println(node);
+
+        node.edges.values().forEach(n-> {
+            for (int i = 1; i < height; i++) {
+                System.out.print("\t");
+            }
+            System.out.print(n+"\t");
+        });
         node.edges.values().forEach(n->printTree(n, height+1));
+        if(!node.isLeaf())
+            System.out.println();
+
+    }
+
+    @Override
+    public String treePrint(TreeNode node, int height, String res) {
+        if(!node.isLeaf())
+        {
+            node.edges.values().forEach(n->printTree(n, height+1));
+        }
+
+        for (int i = 1; i < height; i++) {
+            res+="\t";
+        }
+
+        for(TreeNode n : node.edges.values())
+            res += n +"\t";
+        res += "\n";
+        return res;
     }
 }
