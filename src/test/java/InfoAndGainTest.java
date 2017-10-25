@@ -17,21 +17,20 @@ import java.util.LinkedList;
 public class InfoAndGainTest {
 
     private static LinkedList<DataTuple> tuples;
+    private static Parser parser;
     private ID3TreeBuilder id3Tree;
     private Partition partition;
-
     @BeforeClass
     public static void preSetup()
     {
-        Parser p = new Parser();
-        tuples = p.parseTrainingData("src/test/resources/smallTrainingData.txt");
+        parser = new Parser();
+        parser.setStrategy(new SurvivorManStrategy());
+        tuples = parser.parseTrainingData("src/test/resources/smallTrainingData.txt");
         Assert.assertTrue(tuples.size() > 0);
     }
     @Before
     public void setup() {
         partition = new Partition(tuples);
-        Parser parser = new Parser();
-        parser.setStrategy(new SurvivorManStrategy());
         HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes.txt");
         id3Tree = new ID3TreeBuilder(partition, attributelist);
         Assert.assertTrue(partition.getTuples() != null);
