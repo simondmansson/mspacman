@@ -22,7 +22,6 @@ public class ID3Tree implements DecisionTree {
     }
 
     private MOVE makeDecision(DataTuple tuple) {
-        //TODO walk through tree KEMAL FIX PLZ
         /**
          * The node label is an attribute in the tree
          * use the label to get a value from the tuple
