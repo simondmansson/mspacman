@@ -10,6 +10,8 @@ import dataRecording.DataTuple;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.ui.layout.HierarchicalLayout;
+import org.graphstream.ui.swingViewer.Viewer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -76,23 +78,6 @@ public class TreePrinterTests {
         Assert.assertTrue(partition.getTuples() != null);
     }
 
-    @Test
-    public void printBFS2() {
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while(!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            if(!node.isLeaf()) {
-                System.out.print("Parent: "+ node +", Children: ");
-            }
-            node.getEdges().values().forEach(n -> {
-                System.out.print(n+ " ");
-                queue.add(n);
-            });
-            if(!node.isLeaf())
-                System.out.println();
-        }
-    }
 
     @Test
     public void GraphStreamTest() {
@@ -104,8 +89,9 @@ public class TreePrinterTests {
         graph.addEdge("AB", "A", "B");
         graph.addEdge("BC", "B", "C");
         graph.addEdge("CA", "C", "A");
-
-        graph.display();
+        Viewer viewer = graph.display();
+        HierarchicalLayout hl = new HierarchicalLayout();
+        viewer.enableAutoLayout(hl);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -127,7 +113,9 @@ public class TreePrinterTests {
         graph.addEdge(root.toString()+left.toString(), root.toString(), left.toString());
         graph.addEdge(left.toString()+leftleft.toString(), left.toString(), leftleft.toString());
         graph.addEdge(left.toString()+leftright.toString(), left.toString(), leftright.toString());
-        graph.display();
+        Viewer viewer = graph.display();
+        HierarchicalLayout hl = new HierarchicalLayout();
+        viewer.enableAutoLayout(hl);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
