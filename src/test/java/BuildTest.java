@@ -26,7 +26,7 @@ public class BuildTest {
     {
         parser = new Parser();
         parser.setStrategy(new SurvivorManStrategy());
-        tuples = parser.parseTrainingData("src/test/resources/TrainingData.txt");
+        tuples = parser.parseTrainingData("src/test/resources/trainingData.txt");
         Assert.assertTrue(tuples.size() > 0);
     }
     @Before
@@ -45,5 +45,14 @@ public class BuildTest {
         //Assert.assertEquals(2.32, result, 1e-2);
     }
 
+    @Test
+    public void pureDataTest() {
+        tuples = parser.parseTrainingData("src/test/resources/pureTrainingData.txt");
+        partition = new Partition(tuples);
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes.txt");
+        id3Tree = new ID3TreeBuilder(partition, attributelist);
+        DecisionTree tree = id3Tree.buildTree();
+        Assert.assertTrue(tree.makeDecision(partition.getTuples().get(0).getSaveString()).equals("LEFT"));
+    }
 
 }
