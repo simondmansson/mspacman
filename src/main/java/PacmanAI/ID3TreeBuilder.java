@@ -133,7 +133,6 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
                 bestGain = gain;
             }
         }
-
         return toSplitOn;
     }
 
