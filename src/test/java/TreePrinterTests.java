@@ -45,7 +45,7 @@ public class TreePrinterTests {
     }
 
     @Test
-    public void treeTEst1337()
+    public void printTreeMediumTest()
     {
         Parser parser = new Parser();
         parser.setStrategy(new SurvivorManStrategy());
@@ -59,16 +59,21 @@ public class TreePrinterTests {
         texasWalkerRanger.VisualizeTree(tree.getRoot());
         Assert.assertTrue(partition.getTuples() != null);
     }
-    @Test
-    public void printBFS() {
-        for(int i = 0; i < root.getEdges().size(); i++) {
-            System.out.print("\t");
-        }
-        System.out.println("\t"+ root);
-        LinkedList<TreeNode> nodes = new LinkedList<>();
-        root.getEdges().values().forEach(nodes::add);
-        print(nodes, 1);
 
+    @Test
+    public void printTreeLargeTest()
+    {
+        Parser parser = new Parser();
+        parser.setStrategy(new SurvivorManStrategy());
+        LinkedList<DataTuple> tuples = parser.parseTrainingData("src/test/resources/trainingData.txt");
+        Assert.assertTrue(tuples.size() > 0);
+        Partition partition = new Partition(tuples);
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes.txt");
+        ID3TreeBuilder id3Tree = new ID3TreeBuilder(partition, attributelist);
+        DecisionTree tree = id3Tree.buildTree();
+        TreeWalker texasWalkerRanger = new TreeWalker();
+        texasWalkerRanger.VisualizeTree(tree.getRoot());
+        Assert.assertTrue(partition.getTuples() != null);
     }
 
     @Test
@@ -130,15 +135,4 @@ public class TreePrinterTests {
         }
     }
 
-    private void print(LinkedList<TreeNode> nodes, int offset) {
-        LinkedList<TreeNode> children = new LinkedList<>();
-        for(int i = 0; i < offset; i++) {
-            System.out.print("\t");
-        }
-        nodes.forEach(n->System.out.print(n + "\t"));
-        System.out.println();
-        nodes.forEach(n->n.getEdges().values().forEach(children::add));
-        if(children.size()>0)
-            print(children, offset+1);
-    }
 }
