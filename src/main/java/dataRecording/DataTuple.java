@@ -264,6 +264,11 @@ public class DataTuple {
 		return DiscreteTag.DiscretizeDouble(aux);
 	}
 
+	/**
+	 * Returning an attribute equivalent to the string passed into the method.
+	 * @param attribute A String that represents an attribute.
+	 * @return
+	 */
 	public String getAttribute(String attribute) {
 		switch(attribute) {
 			case "DirectionChosen":
@@ -279,13 +284,13 @@ public class DataTuple {
 			case "isSueEdible":
 				return "" + isSueEdible;
 			case "blinkyDist":
-				return "" + blinkyDist;
+				return "" + discretizeDistance(blinkyDist);
 			case "inkyDist":
-				return "" + inkyDist;
+				return "" + discretizeDistance(inkyDist);
 			case "getPinkyDist":
-				return "" + pinkyDist;
+				return "" + discretizeDistance(pinkyDist);
 			case "sueDist":
-				return "" + sueDist;
+				return "" + discretizeDistance(sueDist);
 			case "blinkyDir":
 				return "" + blinkyDir;
 			case "inkyDir":

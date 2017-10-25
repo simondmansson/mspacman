@@ -36,7 +36,7 @@ public class TreeNode {
     public boolean isLeaf() {
         return edges.isEmpty();
     }
-
+  
     public String toString() {
         return label;
     }
