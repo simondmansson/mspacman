@@ -287,7 +287,7 @@ public class DataTuple {
 				return "" + discretizeDistance(blinkyDist);
 			case "inkyDist":
 				return "" + discretizeDistance(inkyDist);
-			case "getPinkyDist":
+			case "pinkyDist":
 				return "" + discretizeDistance(pinkyDist);
 			case "sueDist":
 				return "" + discretizeDistance(sueDist);
