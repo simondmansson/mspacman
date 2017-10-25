@@ -30,6 +30,12 @@ public class ID3Tree implements DecisionTree {
          * when leaf return the MOVE
          * IF NOT EXIST RETURN NEUTRAL
          */
-        return null;
+        TreeNode node = root;
+        String next ="NEUTRAL";
+        while(!node.isLeaf()) {
+            next = tuple.getAttribute(node.toString());
+            node = node.getChild(next);
+        }
+        return MOVE.valueOf(next);
     }
 }
