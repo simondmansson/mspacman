@@ -6,7 +6,8 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.ui.layout.HierarchicalLayout;
-import org.graphstream.ui.swingViewer.Viewer;
+import org.graphstream.ui.*;
+import org.graphstream.ui.view.Viewer;
 
 
 import java.util.ArrayList;

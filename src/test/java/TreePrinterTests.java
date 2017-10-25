@@ -11,14 +11,12 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.ui.layout.HierarchicalLayout;
-import org.graphstream.ui.swingViewer.Viewer;
+import org.graphstream.ui.view.Viewer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class TreePrinterTests {
     private TreeNode root;
