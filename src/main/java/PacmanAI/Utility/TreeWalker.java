@@ -23,19 +23,24 @@ public class TreeWalker {
 
     public void VisualizeTree(TreeNode root) {
         walkTree(root, 0);
-        vertices.forEach( v->
+        int i = 0;
+        for(TreeNode v :vertices)
+        //vertices.forEach( v->
         {
             System.out.println(v);
-            Node node = graph.addNode(v.toString());
+            Node node = graph.addNode(v.toString()+ i++);
 
             node.addAttribute("ui.label", v.toString());
-        });
+        //});
+        }
+        /*
         vertices.forEach( v-> {
             v.getEdges().forEach((key, val)-> {
                 Edge e  = graph.addEdge(key, v.toString(), val.toString());
                 e.addAttribute("ui.label", key);
             });
         });
+        */
         graph.display();
         try {
             Thread.sleep(20000);

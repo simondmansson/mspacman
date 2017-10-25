@@ -1,5 +1,6 @@
 package PacmanAI.interfaces;
 
+import PacmanAI.TreeNode;
 import pacman.game.Constants.*;
 
 /**
@@ -10,5 +11,6 @@ import pacman.game.Constants.*;
  */
 public interface DecisionTree {
     MOVE makeDecision(String gamestate);
+    TreeNode getRoot();
 
 }

@@ -274,7 +274,7 @@ public class DataTuple {
 			case "DirectionChosen":
 				return "" + DirectionChosen;
 			case "numOfPowerPillsLeft":
-				return "" + numOfPowerPillsLeft;
+				return "" + discretizeNumberOfPowerPills(numOfPowerPillsLeft);
 			case "isBlinkyEdible":
 				return "" + isBlinkyEdible;
 			case "isInkyEdible":
