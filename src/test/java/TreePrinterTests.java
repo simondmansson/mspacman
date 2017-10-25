@@ -1,4 +1,5 @@
 import PacmanAI.TreeNode;
+import PacmanAI.Utility.TreeWalker;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
@@ -7,7 +8,6 @@ import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Random;
 
 public class TreePrinterTests {
     private TreeNode root;
@@ -30,15 +30,9 @@ public class TreePrinterTests {
     }
 
     @Test
-    public void PrintTree() {
-        System.out.println(root);
-        root.printTree(root ,1);
-    }
-
-    @Test
-    public void TreePrint() {
-        System.out.println(root.treePrint(root ,1, ""));
-
+    public void TreeWalker() {
+        TreeWalker texasWalkerRanger = new TreeWalker();
+        texasWalkerRanger.VisualizeTree(root);
     }
 
     @Test
@@ -89,8 +83,8 @@ public class TreePrinterTests {
             e.printStackTrace();
         }
     }
-    @Test
 
+    @Test
     public void GraphStreamTest2() {
         Graph graph = new SingleGraph("TestTree");
         TreeNode left = new TreeNode("blinkyIsEdible");
@@ -110,7 +104,6 @@ public class TreePrinterTests {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     private void print(LinkedList<TreeNode> nodes, int offset) {
