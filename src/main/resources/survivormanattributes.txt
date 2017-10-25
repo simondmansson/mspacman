@@ -6,8 +6,8 @@ blinkyDist          :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
 inkyDist            :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
 pinkyDist           :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
 sueDist             :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
-blinkyDir           :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
-inkyDir             :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
-pinkyDir            :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
-sueDir              :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
+blinkyDir           :UP, RIGHT, DOWN, LEFT, NEUTRAL
+inkyDir             :UP, RIGHT, DOWN, LEFT, NEUTRAL
+pinkyDir            :UP, RIGHT, DOWN, LEFT, NEUTRAL
+sueDir              :UP, RIGHT, DOWN, LEFT, NEUTRAL
 numOfPowerPillsLeft :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE

@@ -16,6 +16,11 @@ public class ID3Tree implements DecisionTree {
         return makeDecision( new DataTuple(state));
     }
 
+    @Override
+    public TreeNode getRoot() {
+        return root;
+    }
+
     private MOVE makeDecision(DataTuple tuple) {
         //TODO walk through tree KEMAL FIX PLZ
         /**

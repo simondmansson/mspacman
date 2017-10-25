@@ -1,11 +1,20 @@
+import PacmanAI.ID3Tree;
+import PacmanAI.ID3TreeBuilder;
+import PacmanAI.Partition;
 import PacmanAI.TreeNode;
+import PacmanAI.Utility.Parser;
+import PacmanAI.Utility.SurvivorManStrategy;
 import PacmanAI.Utility.TreeWalker;
+import PacmanAI.interfaces.DecisionTree;
+import dataRecording.DataTuple;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -35,6 +44,21 @@ public class TreePrinterTests {
         texasWalkerRanger.VisualizeTree(root);
     }
 
+    @Test
+    public void treeTEst1337()
+    {
+        Parser parser = new Parser();
+        parser.setStrategy(new SurvivorManStrategy());
+        LinkedList<DataTuple> tuples = parser.parseTrainingData("src/test/resources/mediumTrainingData.txt");
+        Assert.assertTrue(tuples.size() > 0);
+        Partition partition = new Partition(tuples);
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes.txt");
+        ID3TreeBuilder id3Tree = new ID3TreeBuilder(partition, attributelist);
+        DecisionTree tree = id3Tree.buildTree();
+        TreeWalker texasWalkerRanger = new TreeWalker();
+        texasWalkerRanger.VisualizeTree(tree.getRoot());
+        Assert.assertTrue(partition.getTuples() != null);
+    }
     @Test
     public void printBFS() {
         for(int i = 0; i < root.getEdges().size(); i++) {
