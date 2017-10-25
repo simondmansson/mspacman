@@ -22,14 +22,22 @@ public class TreeNode {
     }
 
     public void addEdge(String path, TreeNode child) {
-            edges.put(path, child);
+        edges.put(path, child);
     }
 
     public TreeNode getChild(String path) {
         return edges.get(path);
     }
 
+    public HashMap<String, TreeNode> getEdges() {
+        return edges;
+    }
+
     public boolean isLeaf() {
         return edges.isEmpty();
+    }
+
+    public String toString() {
+        return label;
     }
 }
