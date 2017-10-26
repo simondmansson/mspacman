@@ -1,0 +1,8 @@
+isBlinkyEdible      :true, false
+isInkyEdible        :true, false
+isPinkyEdible       :true, false
+isSueEdible         :true, false
+blinkyClose         :true, false
+inkyClose           :true, false
+pinkyClose          :true, false
+sueClose            :true, false

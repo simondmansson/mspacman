@@ -5,6 +5,7 @@ import pacman.game.Constants.DM;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 import pacman.game.Game;
+import pacman.game.internal.Ghost;
 
 public class DataTuple {
 
@@ -270,7 +271,7 @@ public class DataTuple {
 	 * @return
 	 */
 	public String getAttribute(String attribute) {
-		switch(attribute) {
+		switch (attribute) {
 			case "DirectionChosen":
 				return "" + DirectionChosen;
 			case "numOfPowerPillsLeft":
@@ -299,10 +300,26 @@ public class DataTuple {
 				return "" + pinkyDir;
 			case "sueDir":
 				return "" + sueDir;
+			case "blinkyClose":
+				return ghostIsClose(blinkyDist);
+			case "inkyClose":
+				return ghostIsClose(inkyDist);
+			case "pinkyClose":
+				return ghostIsClose(pinkyDist);
+			case "sueClose":
+				return ghostIsClose(sueDist);
 			default:
 				System.out.println("Error, " + attribute + " was not found in getAttribute() method.");
 				return null;
 		}
 	}
 
+	private String ghostIsClose(int dist) {
+		DiscreteTag res = discretizeDistance(dist);
+		if(res == DiscreteTag.VERY_LOW || res == DiscreteTag.LOW)
+			return "true";
+		else
+			return "false";
+	}
 }
+

@@ -2,6 +2,7 @@ import PacmanAI.ID3TreeBuilder;
 import PacmanAI.Partition;
 import PacmanAI.Utility.Parser;
 import PacmanAI.Utility.SurvivorManStrategy;
+import PacmanAI.Utility.TreeWalker;
 import PacmanAI.interfaces.DecisionTree;
 import dataRecording.DataTuple;
 import org.junit.Assert;
@@ -43,6 +44,17 @@ public class BuildTest {
         System.out.println();
         //double result = id3Tree.getInformationNeeded();
         //Assert.assertEquals(2.32, result, 1e-2);
+    }
+
+    @Test
+    public void surviorMan2Tree(){
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes2.txt");
+        id3Tree = new ID3TreeBuilder(partition, attributelist);
+        Assert.assertTrue(partition.getTuples() != null);
+        DecisionTree tree = id3Tree.buildTree();
+        System.out.println();
+        TreeWalker texasWalkerRanger = new TreeWalker();
+        texasWalkerRanger.VisualizeTree(tree.getRoot());
     }
 
     @Test
