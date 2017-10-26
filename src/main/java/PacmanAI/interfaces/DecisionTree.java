@@ -1,6 +1,7 @@
 package PacmanAI.interfaces;
 
 import PacmanAI.TreeNode;
+import dataRecording.DataTuple;
 import pacman.game.Constants.*;
 
 /**
@@ -11,6 +12,7 @@ import pacman.game.Constants.*;
  */
 public interface DecisionTree {
     MOVE makeDecision(String gamestate);
+    MOVE makeDecision(DataTuple tuple);
     TreeNode getRoot();
 
 }
