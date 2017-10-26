@@ -26,13 +26,11 @@ public class SurvivorMan extends Controller<MOVE> {
     public SurvivorMan() {
         ID3TreeBuilder builder =  new ID3TreeBuilder();
         this.tree = builder.buildTree();
-        System.out.println();
     }
-
-
 
     @Override
     public MOVE getMove(Game game, long timeDue) {
-        return tree.makeDecision(game.getGameState());
+        DataTuple t = new DataTuple(game, game.getPacmanLastMoveMade());
+        return tree.makeDecision(t);
     }
 }

@@ -44,6 +44,7 @@ public class DataTuple {
 	public boolean isInkyEdible = false;
 	public boolean isPinkyEdible = false;
 	public boolean isSueEdible = false;
+	public boolean wasPillEaten = false;
 
 	public int blinkyDist = -1;
 	public int inkyDist = -1;
@@ -77,6 +78,8 @@ public class DataTuple {
 		this.currentLevelTime = game.getCurrentLevelTime();
 		this.numOfPillsLeft = game.getNumberOfActivePills();
 		this.numOfPowerPillsLeft = game.getNumberOfActivePowerPills();
+		this.wasPillEaten = game.wasPillEaten();
+
 
 		if (game.getGhostLairTime(GHOST.BLINKY) == 0) {
 			this.isBlinkyEdible = game.isGhostEdible(GHOST.BLINKY);
@@ -308,6 +311,8 @@ public class DataTuple {
 				return ghostIsClose(pinkyDist);
 			case "sueClose":
 				return ghostIsClose(sueDist);
+			case "wasPillEaten":
+				return "" + wasPillEaten;
 			default:
 				System.out.println("Error, " + attribute + " was not found in getAttribute() method.");
 				return null;

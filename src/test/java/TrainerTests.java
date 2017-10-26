@@ -28,4 +28,23 @@ public class TrainerTests {
         }
        // Assert.assertTrue(accuracy > 90);
     }
+
+    @Test
+    public void TrainerShoudReportAccuracy3() {
+        System.out.println("KEMALDATA");
+        for(int i = 0; i < 10; i++) {
+            double accuracy =  trainer.computeAccuracy("src/test/resources/KemalStarPlayer.txt","src/test/resources/survivormanattributes.txt");
+            System.out.println(accuracy);
+        }
+        // Assert.assertTrue(accuracy > 90);
+    }
+    @Test
+    public void TrainerShoudReportAccuracy4() {
+        System.out.println("KEMALDATA2");
+        for(int i = 0; i < 10; i++) {
+            double accuracy =  trainer.computeAccuracy("src/test/resources/KemalStarPlayer.txt","src/test/resources/survivormanattributes3.txt");
+            System.out.println(accuracy);
+        }
+        // Assert.assertTrue(accuracy > 90);
+    }
 }

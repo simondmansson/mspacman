@@ -29,7 +29,7 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
         LinkedList<DataTuple> tuples = parser.parseTrainingData("src/main/resources/trainingData.txt");
         assert(tuples.size() > 0);
         dataset = new Partition(tuples);
-        attributes = parser.parse("src/main/resources/survivormanattributes.txt");
+        attributes = parser.parse("src/main/resources/survivormanattributes3.txt");
         assert(attributes.size() > 0);
         classes = new LinkedList<>();
         classes.add("LEFT");
