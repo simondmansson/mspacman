@@ -1,8 +1,12 @@
 package PacmanAI;
 
+import PacmanAI.Utility.Parser;
+import PacmanAI.Utility.SurvivorManStrategy;
 import PacmanAI.interfaces.DecisionTree;
 import PacmanAI.interfaces.DecisionTreeBuilder;
 import dataRecording.DataTuple;
+import org.junit.Assert;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -17,6 +21,23 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
 
     public double getInformationNeeded() {
         return informationNeeded;
+    }
+
+    public ID3TreeBuilder() {
+        Parser parser = new Parser();
+        parser.setStrategy(new SurvivorManStrategy());
+        LinkedList<DataTuple> tuples = parser.parseTrainingData("src/main/resources/trainingData.txt");
+        assert(tuples.size() > 0);
+        dataset = new Partition(tuples);
+        attributes = parser.parse("src/main/resources/survivormanattributes.txt");
+        assert(attributes.size() > 0);
+        classes = new LinkedList<>();
+        classes.add("LEFT");
+        classes.add("UP");
+        classes.add("RIGHT");
+        classes.add("DOWN");
+        classes.add("NEUTRAL");
+        informationNeeded = info(dataset); // MOVE as second parameter
     }
 
     /**
