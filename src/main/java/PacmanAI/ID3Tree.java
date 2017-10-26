@@ -13,7 +13,7 @@ public class ID3Tree implements DecisionTree {
 
     @Override
     public MOVE makeDecision(String state) {
-        return makeDecision( new DataTuple(state));
+        return think(new DataTuple(state));
     }
 
     @Override
@@ -21,7 +21,7 @@ public class ID3Tree implements DecisionTree {
         return root;
     }
 
-    private MOVE makeDecision(DataTuple tuple) {
+    private MOVE think(DataTuple tuple) {
         /**
          * The node label is an attribute in the tree
          * use the label to get a value from the tuple
@@ -29,13 +29,15 @@ public class ID3Tree implements DecisionTree {
          * when leaf return the MOVE
          * IF NOT EXIST RETURN NEUTRAL
          */
-        TreeNode node = root;
+        /*TreeNode node = root;
         String next;
         while(!node.isLeaf()) {
             next = tuple.getAttribute(node.getLabel());
             node = node.getChild(next);
         }
         next = node.getLabel();
-        return MOVE.valueOf(next);
+        MOVE move = MOVE.valueOf(next);
+        return move;*/
+        return MOVE.LEFT;
     }
 }

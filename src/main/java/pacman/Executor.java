@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Random;
 
+import PacmanAI.SurvivorMan;
 import dataRecording.DataCollectorController;
 import pacman.controllers.Controller;
 import pacman.controllers.HumanController;
@@ -85,7 +86,8 @@ public class Executor
 		 */
 		
 		//run game for data collection
-		exec.runGameTimed(new DataCollectorController(new KeyBoardInput()),new StarterGhosts(),visual);
+		//exec.runGameTimed(new DataCollectorController(new KeyBoardInput()),new StarterGhosts(),visual);
+		exec.runGameTimed(new SurvivorMan(),new StarterGhosts(),visual);
 		//exec.runGameTimed(new HumanController(new KeyBoardInput()),new StarterGhosts(), true);
 	}
 	
