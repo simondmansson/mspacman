@@ -6,6 +6,7 @@ import PacmanAI.interfaces.DecisionTree;
 import com.sun.deploy.panel.TreeBuilder;
 import dataRecording.DataTuple;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -31,16 +32,17 @@ public class Trainer {
             if(tuple.DirectionChosen == tree.makeDecision(tuple.getSaveString()))
                 hits++;
 
-        return hits/trainingdata.size();
+        return hits*100/trainingdata.size();
     }
 
     private void readData(String data, String attributes) {
         tuples = parser.parseTrainingData(data);
         attributelist = parser.parse(attributes);
+        Collections.shuffle(tuples);
     }
     private void splitData() {
-       trainingdata = new LinkedList<>(tuples.subList(0, tuples.size()/2));
-       testdata = new LinkedList<>(tuples.subList(tuples.size()/2+1, tuples.size()));
+       trainingdata = new LinkedList<>(tuples.subList(0,  (int)(tuples.size()*0.7)));
+       testdata = new LinkedList<>(tuples.subList((int)(tuples.size()*0.7)+1, tuples.size()));
     }
 
     private void buildTree() {
