@@ -47,9 +47,9 @@ public class BuildTest {
     }
 
     @Test
-    public void surviorMan2Tree(){
-        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes2.txt");
-        tuples = parser.parseTrainingData("src/test/resources/smallTrainingData.txt");
+    public void surviorMan3Tree(){
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/test/resources/survivormanattributes3.txt");
+        tuples = parser.parseTrainingData("src/test/resources/trainingData.txt");
         partition = new Partition(tuples);
         id3Tree = new ID3TreeBuilder(partition, attributelist);
         Assert.assertTrue(partition.getTuples() != null);

@@ -45,14 +45,30 @@ public class TreePrinterTests {
     }
 
     @Test
-    public void printTreeMediumTest()
+    public void printTreeMediumSurvivorMan3()
     {
         Parser parser = new Parser();
         parser.setStrategy(new SurvivorManStrategy());
         LinkedList<DataTuple> tuples = parser.parseTrainingData("src/test/resources/mediumTrainingData.txt");
         Assert.assertTrue(tuples.size() > 0);
         Partition partition = new Partition(tuples);
-        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/main/resources/survivormanattributes.txt");
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/test/resources/survivormanattributes3.txt");
+        ID3TreeBuilder id3Tree = new ID3TreeBuilder(partition, attributelist);
+        DecisionTree tree = id3Tree.buildTree();
+        TreeWalker texasWalkerRanger = new TreeWalker();
+        texasWalkerRanger.VisualizeTree(tree.getRoot());
+        Assert.assertTrue(partition.getTuples() != null);
+    }
+
+    @Test
+    public void printTreeMediumSurvivorMan()
+    {
+        Parser parser = new Parser();
+        parser.setStrategy(new SurvivorManStrategy());
+        LinkedList<DataTuple> tuples = parser.parseTrainingData("src/test/resources/mediumTrainingData.txt");
+        Assert.assertTrue(tuples.size() > 0);
+        Partition partition = new Partition(tuples);
+        HashMap<String, LinkedList<String>> attributelist = parser.parse("src/test/resources/survivormanattributes.txt");
         ID3TreeBuilder id3Tree = new ID3TreeBuilder(partition, attributelist);
         DecisionTree tree = id3Tree.buildTree();
         TreeWalker texasWalkerRanger = new TreeWalker();

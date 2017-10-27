@@ -26,7 +26,7 @@ public class ID3TreeBuilder implements DecisionTreeBuilder {
     public ID3TreeBuilder() {
         Parser parser = new Parser();
         parser.setStrategy(new SurvivorManStrategy());
-        LinkedList<DataTuple> tuples = parser.parseTrainingData("src/main/resources/trainingData.txt");
+        LinkedList<DataTuple> tuples = parser.parseTrainingData("src/main/resources/KemalStarPlayer.txt");
         assert(tuples.size() > 0);
         dataset = new Partition(tuples);
         attributes = parser.parse("src/main/resources/survivormanattributes3.txt");

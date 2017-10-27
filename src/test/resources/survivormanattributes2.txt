@@ -1,3 +1,4 @@
+ghostsEdible        :true, false
 isBlinkyEdible      :true, false
 isInkyEdible        :true, false
 isPinkyEdible       :true, false

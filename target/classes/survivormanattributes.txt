@@ -2,6 +2,7 @@ isBlinkyEdible      :true, false
 isInkyEdible        :true, false
 isPinkyEdible       :true, false
 isSueEdible         :true, false
+PowerPillsLeft      :true, false
 blinkyDist          :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
 inkyDist            :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
 pinkyDist           :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE
@@ -10,4 +11,3 @@ blinkyDir           :UP, RIGHT, DOWN, LEFT, NEUTRAL
 inkyDir             :UP, RIGHT, DOWN, LEFT, NEUTRAL
 pinkyDir            :UP, RIGHT, DOWN, LEFT, NEUTRAL
 sueDir              :UP, RIGHT, DOWN, LEFT, NEUTRAL
-numOfPowerPillsLeft :VERY_LOW, LOW, MEDIUM, HIGH, VERY_HIGH, NONE

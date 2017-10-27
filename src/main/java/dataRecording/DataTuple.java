@@ -277,8 +277,8 @@ public class DataTuple {
 		switch (attribute) {
 			case "DirectionChosen":
 				return "" + DirectionChosen;
-			case "numOfPowerPillsLeft":
-				return "" + discretizeNumberOfPowerPills(numOfPowerPillsLeft);
+			case "PowerPillsLeft":
+				return powerPillsLeft();
 			case "isBlinkyEdible":
 				return "" + isBlinkyEdible;
 			case "isInkyEdible":
@@ -313,6 +313,8 @@ public class DataTuple {
 				return ghostIsClose(sueDist);
 			case "wasPillEaten":
 				return "" + wasPillEaten;
+			case "ghostsEdible":
+					return ghostsEdible();
 			default:
 				System.out.println("Error, " + attribute + " was not found in getAttribute() method.");
 				return null;
@@ -325,6 +327,18 @@ public class DataTuple {
 			return "true";
 		else
 			return "false";
+	}
+
+	private String ghostsEdible() {
+		if(isBlinkyEdible || isInkyEdible || isPinkyEdible || isSueEdible)
+			return "true";
+		return "false";
+	}
+
+	private String powerPillsLeft() {
+		if(numOfPowerPillsLeft == 0)
+			return "true";
+		return "false";
 	}
 }
 

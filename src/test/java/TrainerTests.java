@@ -20,8 +20,18 @@ public class TrainerTests {
     }
 
     @Test
+    public void TrainerShoudReportAccuracy5() {
+        System.out.println("THIRD LIST");
+        for(int i = 0; i < 10; i++) {
+            double accuracy =  trainer.computeAccuracy("src/test/resources/trainingData.txt","src/test/resources/survivormanattributes3.txt");
+            System.out.println(accuracy);
+        }
+        //Assert.assertTrue(accuracy > 90);
+    }
+
+    @Test
     public void TrainerShoudReportAccuracy2() {
-        System.out.println("SECOUND LIST");
+        System.out.println("SECOND LIST");
         for(int i = 0; i < 10; i++) {
             double accuracy =  trainer.computeAccuracy("src/test/resources/trainingData.txt","src/test/resources/survivormanattributes2.txt");
             System.out.println(accuracy);
