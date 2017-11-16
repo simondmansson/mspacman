@@ -29,7 +29,7 @@ public class TreeWalker {
     public void VisualizeTree(TreeNode root) {
         walkTree(root);
         fillGraph();
-        Viewer viewer = graph.display();
+        Viewer viewer = graph.display(false);
         HierarchicalLayout hl = new HierarchicalLayout();
         viewer.enableAutoLayout(hl);
         try {
@@ -49,7 +49,7 @@ public class TreeWalker {
                 String to = c.toString()+vertices.indexOf(c);
                 String key = from + to;
                 Edge e = graph.addEdge(key, from, to);
-                e.addAttribute("ui.label", key);
+                //e.addAttribute("ui.label", from); need to store the edge labels in a separate data structure or retrive them from the vertices somehow
             }
         }
     }
