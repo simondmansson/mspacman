@@ -107,49 +107,4 @@ public class TreePrinterTests {
         texasWalkerRanger.VisualizeTree(tree.getRoot());
         Assert.assertTrue(partition.getTuples() != null);
     }
-
-    @Test
-    public void GraphStreamTest() {
-        Graph graph = new SingleGraph("Tutorial 1");
-
-        graph.addNode("A");
-        graph.addNode("B");
-        graph.addNode("C");
-        graph.addEdge("AB", "A", "B");
-        graph.addEdge("BC", "B", "C");
-        graph.addEdge("CA", "C", "A");
-        Viewer viewer = graph.display();
-        HierarchicalLayout hl = new HierarchicalLayout();
-        viewer.enableAutoLayout(hl);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void GraphStreamTest2() {
-        Graph graph = new SingleGraph("TestTree");
-        TreeNode left = new TreeNode("blinkyIsEdible");
-        TreeNode leftleft = new TreeNode("true");
-        TreeNode leftright = new TreeNode("false");
-        TreeNode[] vertices = { root, left, leftleft, leftright};
-        for(int i = 0; i < vertices.length; i++) {
-            Node n = graph.addNode(vertices[i].toString());
-            n.addAttribute("ui.label", vertices[i].toString());
-        }
-        graph.addEdge(root.toString()+left.toString(), root.toString(), left.toString());
-        graph.addEdge(left.toString()+leftleft.toString(), left.toString(), leftleft.toString());
-        graph.addEdge(left.toString()+leftright.toString(), left.toString(), leftright.toString());
-        Viewer viewer = graph.display();
-        HierarchicalLayout hl = new HierarchicalLayout();
-        viewer.enableAutoLayout(hl);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
